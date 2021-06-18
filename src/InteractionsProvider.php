@@ -51,10 +51,10 @@ final class InteractionsProvider
         ], $method->payload()));
 
         if ($httpResponse->ok) {
-            /** @var ShouldBeDeserialized $shouldBeSerialized */
-            $shouldBeSerialized = $method->serializeTo();
+            /** @var ShouldBeDeserialized $shouldBeDeserialized */
+            $shouldBeDeserialized = $method->serializeTo();
 
-            return new Success($shouldBeSerialized::reconstituteFromArray($httpResponse->payload));
+            return new Success($shouldBeDeserialized::reconstituteFromArray($httpResponse->payload));
         }
 
         return new Failure($httpResponse->error ?: '');

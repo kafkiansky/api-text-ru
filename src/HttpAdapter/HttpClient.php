@@ -141,7 +141,7 @@ abstract class HttpClient
      *
      * @return string
      */
-    final protected function createEndpoint(string $host, string $path): string
+    private function createEndpoint(string $host, string $path): string
     {
         return sprintf('%s/%s', trim($host, '/'), trim($path, '/'));
     }
